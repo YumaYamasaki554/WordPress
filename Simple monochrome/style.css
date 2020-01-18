@@ -1,0 +1,171 @@
+/*
+ Theme Name:   Simple monochrome
+ Description:  Simple monochrome Theme
+ Author:       Yuma Yamasaki
+ Version:      1.0.0
+*/
+
+.nav-item {
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.postedTime {}
+
+.postedTime::before {
+    color: #FFF;
+    font-family: "FontAwesome";
+    content: "\f017";
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 14px;
+    /* display: inline-block; */
+}
+
+.footerLink {}
+
+.footerLink:before {
+    color: #FFF;
+    font-family: "FontAwesome";
+    content: "\f152";
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.borderDot-y-white {
+    border-top: dashed 1px white;
+    border-bottom: dashed 1px white;
+}
+
+.borderDot-y-dark {
+    border-top: dashed 1px rgba(200, 200, 200, .5);
+    border-bottom: dashed 1px rgba(200, 200, 200, .5);
+}
+
+.borderDot-t-white {
+    border-top: dashed 1px white
+}
+
+.borderDot-t-dark {
+    border-top: dashed 1px rgba(200, 200, 200, .5);
+}
+
+.borderDot-b-white {
+    border-bottom: dashed 1px white;
+}
+
+.borderDot-b-dark {
+    border-bottom: dashed 1px rgba(200, 200, 200, .5);
+}
+
+.facebook {
+    background-color: #3B5998;
+    color: #fff;
+}
+
+.twitter {
+    background-color: #1DA1F2;
+}
+
+.line {
+    background-color: #00C300;
+}
+
+.commentBorder {
+    border: 1px solid rgba(200, 200, 200, .5);
+}
+
+.commentLabel {}
+
+.commentLabel:before {
+    color: #333;
+    font-family: "FontAwesome";
+    content: "\f086";
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.comment-reply-title:before {
+    color: #333;
+    font-family: "FontAwesome";
+    content: "\f303";
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.profile:before {
+    color: #fff;
+    font-family: "FontAwesome";
+    content: "\f007";
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.search:before {
+    color: #fff;
+    font-family: "FontAwesome";
+    content: "\f002";
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.pickup:before {
+    color: #fff;
+    font-family: "FontAwesome";
+    content: "\f005";
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.bottomlink1:before {
+    color: #fff;
+    font-family: "FontAwesome";
+    content: "\f104";
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    background-color: #343A40;
+    padding: 16px 2px;
+    margin-right: 8px;
+}
+
+.bottomlink-right {
+    background-color: #343A40;
+}
+
+.bottomlink-left {
+    background-color: #343A40;
+}
+
+
+/* .bottomlink2:after {
+    color: #fff;
+    font-family: "FontAwesome";
+    content: "\f105";
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    background-color: #343A40;
+    padding: 16px 2px;
+    margin-left: 8px;
+} */
+
+.bottomlink1,
+.bottomlink2 {
+    color: #333;
+}
+
+.bottomlink1 span:hover {
+    transition: 1s;
+    background-color: rgba(51, 51, 51, .1);
+}
