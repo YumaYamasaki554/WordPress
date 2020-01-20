@@ -59,11 +59,75 @@
     }
     add_action( 'widgets_init', 'arphabet_widgets_init' );
 
+    // 外観（カスタマイズ）機能実装
     function my_theme_customize_register( $wp_customize ) {
 
-        // この中に追加していく（セクション、セッティング、コントロール）
+    //-----------------------------------------------------------------------------
+    //  ピックアップ記事（上）
+    //-----------------------------------------------------------------------------        
+
+        // セクション
+        $wp_customize->add_section( 'my_theme_section_pickup_head', array(
+          'title'     => 'ピックアップ記事（上）',
+          'priority'  => 200,
+        ));
       
-    }
-    add_action( 'customize_register', 'my_theme_customize_register' );
+        // セッティング
+        $wp_customize->add_setting( 'my_theme_options[pickup_head]', array(
+          'default'   => '',
+          'type'      => 'option',
+          'transport' => 'postMessage',
+        ));
+      
+        // コントロール
+        $wp_customize->add_control( 'my_theme_options_pickup_head', array(
+          'settings'  => 'my_theme_options[pickup_head]',
+          'label'     => 'テキスト入力',
+          'section'   => 'my_theme_section_pickup_head',
+          'type'      => 'text',
+        ));
+
+        $wp_customize->add_control( 'my_theme_options_pickup_head2', array(
+            'settings'  => 'my_theme_options[pickup_head]',
+            'label'     => 'テキスト入力2',
+            'section'   => 'my_theme_section_pickup_head',
+            'type'      => 'text',
+        ));
+  
+  
+    //-----------------------------------------------------------------------------
+    //  ピックアップ記事（横）
+    //-----------------------------------------------------------------------------        
+
+        // セクション
+        $wp_customize->add_section( 'section_pickup_side', array(
+            'title'     => 'ピックアップ記事（サイド）',
+            'priority'  => 200,
+          ));
+        
+          // セッティング
+          $wp_customize->add_setting( 'options[pickup_side]', array(
+            'default'   => '',
+            'type'      => 'option',
+            'transport' => 'postMessage',
+          ));
+        
+          // コントロール
+          $wp_customize->add_control( 'control_pickup_side', array(
+            'settings'  => 'options[pickup_side]',
+            'label'     => 'テキスト入力3',
+            'section'   => 'section_pickup_side',
+            'type'      => 'text',
+          ));
+  
+          $wp_customize->add_control( 'control_pickup_side2', array(
+              'settings'  => 'options[pickup_side]',
+              'label'     => 'テキスト入力4',
+              'section'   => 'section_pickup_side',
+              'type'      => 'text',
+            ));
+
+      }
+      add_action( 'customize_register', 'my_theme_customize_register' );
 
 ?>
