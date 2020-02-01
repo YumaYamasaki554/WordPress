@@ -7,7 +7,7 @@
     <?php dynamic_sidebar( 'sidebar_widget02' ); ?>
 
     <!-- 読んでほしい記事 -->
-    <div class="bg-white pb-3 mb-3">
+    <!-- <div class="bg-white pb-3 mb-3">
         <p class="bg-dark text-light font-weight-bold pl-3 py-1 pickup">PICK UP</p>
         <div class="container text-center">
             <div class="my-3">
@@ -17,6 +17,6 @@
                 </h2>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </div>

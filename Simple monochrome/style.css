@@ -14,8 +14,6 @@ ul {
     padding: 0;
 }
 
-.postedTime {}
-
 .postedTime::before {
     color: #FFF;
     font-family: "FontAwesome";
@@ -25,8 +23,6 @@ ul {
     font-size: 14px;
     /* display: inline-block; */
 }
-
-.footerLink {}
 
 .footerLink:before {
     color: #FFF;
@@ -79,8 +75,6 @@ ul {
 .commentBorder {
     border: 1px solid rgba(200, 200, 200, .5);
 }
-
-.commentLabel {}
 
 .commentLabel:before {
     color: #333;
@@ -168,4 +162,25 @@ ul {
 .bottomlink1 span:hover {
     transition: 1s;
     background-color: rgba(51, 51, 51, .1);
+}
+
+.pagination {
+    text-align: center;
+}
+
+.page-numbers {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0 0.4rem;
+    padding: 0 0.5rem;
+}
+
+.pagination span:not(.dots) {
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+}
+
+.nav-links {
+    margin: 0 auto;
 }

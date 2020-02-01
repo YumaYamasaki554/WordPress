@@ -24,8 +24,8 @@
                                         <?php the_post_thumbnail( '', array( 'class' => 'img-fluid' ) ); ?>
                                     <?php else: ?>
                                     <!-- サムネイル画像を設定していないときの画像はここで設定 -->
-                                        <p>サムネイル画像がありません</p>
-                                    <?php endif; ?>
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/20161006_noimage.svg" alt="サムネイル画像がありません">
+                                   <?php endif; ?>
                                 </div>
                             </div>
                             <div class="px-5 pb-3">

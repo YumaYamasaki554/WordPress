@@ -67,67 +67,119 @@
     //-----------------------------------------------------------------------------        
 
         // セクション
-        $wp_customize->add_section( 'my_theme_section_pickup_head', array(
+        $wp_customize->add_section( 'section_pickup_head', array(
           'title'     => 'ピックアップ記事（上）',
           'priority'  => 200,
         ));
       
-        // セッティング
-        $wp_customize->add_setting( 'my_theme_options[pickup_head]', array(
-          'default'   => '',
-          'type'      => 'option',
-          'transport' => 'postMessage',
+        //-------------------------------------------------------------------------
+        // ピックアップ記事表示有無
+        //-------------------------------------------------------------------------
+        $wp_customize->add_setting( 'pickup_display', array(
+          'default'   => 'true',
+        //   'type'      => 'option',
+        //   'transport' => 'postMessage',
+        //   'sanitize_callback' => 'sanitize_checkbox',
         ));
       
-        // コントロール
-        $wp_customize->add_control( 'my_theme_options_pickup_head', array(
-          'settings'  => 'my_theme_options[pickup_head]',
-          'label'     => 'テキスト入力',
-          'section'   => 'my_theme_section_pickup_head',
-          'type'      => 'text',
+        $wp_customize->add_control( 'pickup_display', array(
+          'settings'  => 'pickup_display',
+          'label'     => 'ピックアップ記事（上）表示',
+          'section'   => 'section_pickup_head',
+          'type'      => 'checkbox',
         ));
 
-        $wp_customize->add_control( 'my_theme_options_pickup_head2', array(
-            'settings'  => 'my_theme_options[pickup_head]',
-            'label'     => 'テキスト入力2',
-            'section'   => 'my_theme_section_pickup_head',
-            'type'      => 'text',
+        //-------------------------------------------------------------------------
+        // ピックアップ記事のID（1つ目）
+        //-------------------------------------------------------------------------
+        $wp_customize->add_setting( 'pickupID1', array(
+            'default'   => '',
+            // 'type'      => 'option',
+            // 'transport' => 'postMessage',
         ));
   
+
+        $wp_customize->add_control( 'pickupID1', array(
+            'settings'  => 'pickupID1',
+            'label'     => 'ピックアップ記事１ID',
+            'section'   => 'section_pickup_head',
+            'type'      => 'text',
+
+        ));
   
+        //-------------------------------------------------------------------------
+        // ピックアップ記事のID（2つ目）
+        //-------------------------------------------------------------------------
+        $wp_customize->add_setting( 'pickupID2', array(
+            'default'   => '',
+            // 'type'      => 'option',
+            // 'transport' => 'postMessage',
+        ));
+  
+
+        $wp_customize->add_control( 'pickupID2', array(
+            'settings'  => 'pickupID2',
+            'label'     => 'ピックアップ記事２ID',
+            'section'   => 'section_pickup_head',
+            'type'      => 'text',
+
+        ));
+
+        //-------------------------------------------------------------------------
+        // ピックアップ記事のID（3つ目）
+        //-------------------------------------------------------------------------
+        $wp_customize->add_setting( 'pickupID3', array(
+            'default'   => '',
+            // 'type'      => 'option',
+            // 'transport' => 'postMessage',
+        ));
+  
+
+        $wp_customize->add_control( 'pickupID3', array(
+            'settings'  => 'pickupID3',
+            'label'     => 'ピックアップ記事３ID',
+            'section'   => 'section_pickup_head',
+            'type'      => 'text',
+
+        ));
+
     //-----------------------------------------------------------------------------
     //  ピックアップ記事（横）
     //-----------------------------------------------------------------------------        
 
-        // セクション
-        $wp_customize->add_section( 'section_pickup_side', array(
-            'title'     => 'ピックアップ記事（サイド）',
-            'priority'  => 200,
-          ));
+        // // セクション
+        // $wp_customize->add_section( 'section_pickup_side', array(
+        //     'title'     => 'ピックアップ記事（サイド）',
+        //     'priority'  => 200,
+        //   ));
         
-          // セッティング
-          $wp_customize->add_setting( 'options[pickup_side]', array(
-            'default'   => '',
-            'type'      => 'option',
-            'transport' => 'postMessage',
-          ));
+        //   // セッティング
+        //   $wp_customize->add_setting( 'options[pickup_side]', array(
+        //     'default'   => '',
+        //     'type'      => 'option',
+        //     'transport' => 'postMessage',
+        //   ));
         
-          // コントロール
-          $wp_customize->add_control( 'control_pickup_side', array(
-            'settings'  => 'options[pickup_side]',
-            'label'     => 'テキスト入力3',
-            'section'   => 'section_pickup_side',
-            'type'      => 'text',
-          ));
+        //   // コントロール
+        //   $wp_customize->add_control( 'control_pickup_side', array(
+        //     'settings'  => 'options[pickup_side]',
+        //     'label'     => 'テキスト入力3',
+        //     'section'   => 'section_pickup_side',
+        //     'type'      => 'text',
+        //   ));
   
-          $wp_customize->add_control( 'control_pickup_side2', array(
-              'settings'  => 'options[pickup_side]',
-              'label'     => 'テキスト入力4',
-              'section'   => 'section_pickup_side',
-              'type'      => 'text',
-            ));
+        //   $wp_customize->add_control( 'control_pickup_side2', array(
+        //       'settings'  => 'options[pickup_side]',
+        //       'label'     => 'テキスト入力4',
+        //       'section'   => 'section_pickup_side',
+        //       'type'      => 'text',
+        //     ));
 
       }
       add_action( 'customize_register', 'my_theme_customize_register' );
 
+
+    function sanitize_checkbox( $checked ) {
+        return ( ( isset( $checked ) && true == $checked ) ? true : false );
+    }
 ?>
